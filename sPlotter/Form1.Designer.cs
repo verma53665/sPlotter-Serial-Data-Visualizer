@@ -124,7 +124,7 @@
             this.richTextBox1.ForeColor = System.Drawing.Color.LimeGreen;
             this.richTextBox1.Location = new System.Drawing.Point(150, 74);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(474, 369);
+            this.richTextBox1.Size = new System.Drawing.Size(471, 369);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -146,25 +146,26 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(20)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Location = new System.Drawing.Point(143, 0);
+            this.panel2.Location = new System.Drawing.Point(149, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(992, 53);
+            this.panel2.Size = new System.Drawing.Size(986, 53);
             this.panel2.TabIndex = 8;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-
             // 
             // formsPlot1
             // 
-            this.formsPlot1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(180)))), ((int)(((byte)(130)))));
+            this.formsPlot1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.formsPlot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.formsPlot1.Location = new System.Drawing.Point(658, 74);
+            this.formsPlot1.ForeColor = System.Drawing.Color.Black;
+            this.formsPlot1.Location = new System.Drawing.Point(629, 74);
             this.formsPlot1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.formsPlot1.Name = "formsPlot1";
-            this.formsPlot1.Size = new System.Drawing.Size(454, 369);
+            this.formsPlot1.Size = new System.Drawing.Size(483, 369);
             this.formsPlot1.TabIndex = 11;
             // 
             // pictureBox4
@@ -173,7 +174,7 @@
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::sPlotter.Properties.Resources.delete_1_icon;
-            this.pictureBox4.Location = new System.Drawing.Point(949, 9);
+            this.pictureBox4.Location = new System.Drawing.Point(941, 9);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(35, 35);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,9 +225,10 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Location = new System.Drawing.Point(-45, -13);
+            this.pictureBox5.Image = global::sPlotter.Properties.Resources.Trollface_non_free;
+            this.pictureBox5.Location = new System.Drawing.Point(10, 27);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(226, 170);
+            this.pictureBox5.Size = new System.Drawing.Size(117, 84);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
@@ -236,7 +238,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1136, 494);
             this.Controls.Add(this.formsPlot1);
             this.Controls.Add(this.panel2);
@@ -246,7 +248,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
-            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ForeColor = System.Drawing.Color.DarkGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

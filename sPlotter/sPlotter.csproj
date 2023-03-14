@@ -114,5 +114,8 @@
   <ItemGroup>
     <None Include="Resources\youtube-logo-2431.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trollface_non-free.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

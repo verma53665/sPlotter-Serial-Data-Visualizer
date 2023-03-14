@@ -50,12 +50,14 @@ namespace sPlotter {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-          
 
-            double[] x = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            double[] y = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            List<double> x = new List<double>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            List<double> y = new List<double>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            formsPlot1.Plot.AddScatter(x, y);
+            double[] arr_x = x.ToArray();
+            double[] arr_y = y.ToArray();
+
+            formsPlot1.Plot.AddScatter(arr_x, arr_y);
             formsPlot1.Refresh();
         }
 
