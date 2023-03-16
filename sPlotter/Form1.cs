@@ -33,8 +33,11 @@ namespace sPlotter {
         public String touched_temp = "0";
         public int pos_x = 0, pos_y = 0, m_x, m_y;
         public int a, b;
+        public bool btn_clear = false;
 
         public int total_x, total_y;
+        List<double> x = new List<double>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        List<double> y = new List<double>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 
         public Form1() {
@@ -51,17 +54,22 @@ namespace sPlotter {
 
         private void Form1_Load(object sender, EventArgs e) {
 
-            List<double> x = new List<double>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            List<double> y = new List<double>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
             double[] arr_x = x.ToArray();
             double[] arr_y = y.ToArray();
 
-            formsPlot1.Plot.AddScatter(arr_x, arr_y);
+            formsPlot1.Plot.AddScatter(x.ToArray(), arr_y);
             formsPlot1.Refresh();
         }
 
         private void button1_Click(object sender, EventArgs e) {
+
+            if (!btn_clear) {
+                x.Clear();
+                y.Clear();
+                formsPlot1.Reset();
+                btn_clear = !btn_clear;
+            }
+            
 
             if (!_continue) {
 
@@ -103,6 +111,16 @@ namespace sPlotter {
         private void UpdateLabel(string newText) {
           
             richTextBox1.AppendText(newText+"\n");
+            double val = double.Parse(newText);
+            y.Add(val);
+            x.Add(y.Count);
+            double[] arr_x = x.ToArray();
+            double[] arr_y = y.ToArray();
+
+            formsPlot1.Reset();
+            formsPlot1.Plot.AddScatter(x.ToArray(), arr_y);
+            formsPlot1.Refresh();
+
             richTextBox1.ScrollToCaret();
         }
 
@@ -136,6 +154,10 @@ namespace sPlotter {
 
         private void pictureBox3_Click(object sender, EventArgs e) {
             Process.Start("https://www.youtube.com/tnowroz");
+        }
+
+        private void label5_Click(object sender, EventArgs e) {
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e) {
