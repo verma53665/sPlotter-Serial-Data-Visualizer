@@ -63,16 +63,18 @@ namespace sPlotter {
 
         private void button1_Click(object sender, EventArgs e) {
 
-            if (!btn_clear) {
+/*            if (!btn_clear) {
                 x.Clear();
                 y.Clear();
                 formsPlot1.Reset();
                 btn_clear = !btn_clear;
-            }
+            }*/
             
 
             if (!_continue) {
-
+                x.Clear();
+                y.Clear();
+                formsPlot1.Reset();
                 StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
 
 
