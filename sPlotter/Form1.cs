@@ -11,6 +11,7 @@ using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Diagnostics;
+using MathNet.Numerics.Statistics.Mcmc;
 
 namespace sPlotter {
     public partial class Form1 : Form {
@@ -110,8 +111,17 @@ namespace sPlotter {
 
         }
 
+        static double[] GenerateNumbers(double n) {
+            double[] arr = new double[(int)n];
+            for (double i = 1; i <= n; i++) {
+                arr[(int)i - 1] = i;
+            }
+            return arr;
+        }
+
         private void UpdateLabel(string newText) {
-          
+            formsPlot1.Reset();
+
             richTextBox1.AppendText(newText+"\n");
             double val = double.Parse(newText);
             y.Add(val);
@@ -119,7 +129,17 @@ namespace sPlotter {
             double[] arr_x = x.ToArray();
             double[] arr_y = y.ToArray();
 
-            formsPlot1.Reset();
+            if (checkBox1.Checked == true) {
+
+                IEnumerable<double> arr_MA_y = MathNet.Numerics.Statistics.Statistics.MovingAverage(arr_y, ((int)numericUpDown1.Value));
+                
+                double[] arr_MA_x = GenerateNumbers(arr_MA_y.ToArray().Length);
+                formsPlot1.Plot.AddScatter(arr_MA_x.ToArray(), arr_MA_y.ToArray());
+                
+            }
+
+
+
             formsPlot1.Plot.AddScatter(x.ToArray(), arr_y);
             formsPlot1.Refresh();
 
@@ -160,6 +180,25 @@ namespace sPlotter {
 
         private void label5_Click(object sender, EventArgs e) {
 
+        }
+
+        bool FullScreen = false;
+        private void pictureBox6_Click(object sender, EventArgs e) {
+            if (!FullScreen) { 
+            this.WindowState = FormWindowState.Maximized;
+                FullScreen = !FullScreen;
+            } else {
+                this.WindowState = FormWindowState.Normal;
+                FullScreen = false;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e) {
+            if (checkBox1.Checked == true) {
+                groupBox1.Enabled = true;
+            } else {
+                groupBox1.Enabled = false;
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e) {
