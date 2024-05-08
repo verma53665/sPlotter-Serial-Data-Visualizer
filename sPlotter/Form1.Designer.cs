@@ -1,4 +1,6 @@
-﻿namespace sPlotter {
+﻿using System.Runtime.InteropServices;
+
+namespace sPlotter {
     partial class Form1 {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +32,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.formsPlot1 = new ScottPlot.FormsPlot();
+            this.formsPlot1 = new ScottPlot.WinForms.FormsPlot();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -452,7 +454,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private ScottPlot.FormsPlot formsPlot1;
+        private ScottPlot.WinForms.FormsPlot formsPlot1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox6;

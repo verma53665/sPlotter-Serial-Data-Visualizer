@@ -40,7 +40,6 @@ namespace sPlotter {
         List<double> x = new List<double>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         List<double> y = new List<double>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-
         public Form1() {
             InitializeComponent();
         }
@@ -58,13 +57,13 @@ namespace sPlotter {
             double[] arr_x = x.ToArray();
             double[] arr_y = y.ToArray();
 
-            formsPlot1.Plot.AddScatter(x.ToArray(), arr_y);
+            formsPlot1.Plot.Add.Scatter(x.ToArray(), arr_y);
             formsPlot1.Refresh();
         }
 
         private void button1_Click(object sender, EventArgs e) {
 
-/*            if (!btn_clear) {
+            /* if (!btn_clear) {
                 x.Clear();
                 y.Clear();
                 formsPlot1.Reset();
@@ -106,7 +105,6 @@ namespace sPlotter {
                 //readThread.Abort();
                 _serialPort.Close();
                 _continue = false;
-
             }
 
         }
@@ -134,13 +132,11 @@ namespace sPlotter {
                 IEnumerable<double> arr_MA_y = MathNet.Numerics.Statistics.Statistics.MovingAverage(arr_y, ((int)numericUpDown1.Value));
                 
                 double[] arr_MA_x = GenerateNumbers(arr_MA_y.ToArray().Length);
-                formsPlot1.Plot.AddScatter(arr_MA_x.ToArray(), arr_MA_y.ToArray());
+                formsPlot1.Plot.Add.Scatter(arr_MA_x.ToArray(), arr_MA_y.ToArray());
                 
             }
 
-
-
-            formsPlot1.Plot.AddScatter(x.ToArray(), arr_y);
+            formsPlot1.Plot.Add.SignalXY(arr_x, arr_y);
             formsPlot1.Refresh();
 
             richTextBox1.ScrollToCaret();
